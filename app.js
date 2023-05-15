@@ -84,7 +84,9 @@ app.post("/login/", async (request, response) => {
     SELECT 
     *
     FROM
-    user WHERE username = '${username}';`;
+    user 
+    WHERE 
+    username = '${username}';`;
   const databaseUser = await db.get(selectUserQuery);
 
   if (databaseUser === undefined) {
